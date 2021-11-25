@@ -11,9 +11,7 @@ class conn {
     private $result;
     private $error;
     private $query;
-    private $rows;
-    private $num_rows;
-
+   
     /**
      * Constructor de la clase
      * @param string $host
@@ -26,29 +24,23 @@ class conn {
         $this->user = $user;
         $this->pass = $pass;
         $this->db = $db;
+        $this->doconnect();
     }
-    public function connect() {
+    public function doconnect() {
         $this->conn = new mysqli($this->host, $this->user, $this->pass);
-        if (!$this->conn) {
-            $this->error = mysql_error();
+        if ( $this -> conn -> connect_errno) {
+            $this->error = $this -> conn -> connect_errno;
             return false;
         }
-        if (!mysql_select_db($this->db, $this->conn)) {
-            $this->error = mysql_error();
-            return false;
-        }
+        
         return true;
     }
-    public function query($query) {
-        $this->query = $query;
-        $this->result = mysql_query($this->query, $this->conn);
-        if (!$this->result) {
-            $this->error = mysql_error();
-            return false;
-        }
-        return true;
+    public function prepareQuery($query){
+        $statament = $this->conn->prepare($query);
+        return $statament;
     }
     public function mysql_connect() {
+        $this ->conn ->close();
         return $this->conn;
     }
     public function mysql_result() {
