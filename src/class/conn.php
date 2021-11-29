@@ -15,7 +15,7 @@ class conn {
      * @param string $db
      */
 
-    public function __construct($host, $user, $pass, $db) {
+    public function __construct($host="localhost", $user = "pedro", $pass = "pedro", $db= "pelis") {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
