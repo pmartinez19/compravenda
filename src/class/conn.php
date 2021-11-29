@@ -1,16 +1,11 @@
-<?
-/**
- * Clase de conexion con la base de datos de compravende
- */
+<?php
 class conn {
     private $host;
     private $user;
     private $pass;
     private $db;
     private $conn;
-    private $result;
     private $error;
-    private $query;
    
     /**
      * Constructor de la clase
@@ -19,33 +14,30 @@ class conn {
      * @param string $pass
      * @param string $db
      */
+
     public function __construct($host, $user, $pass, $db) {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
         $this->db = $db;
-        $this->doconnect();
+        $this->bdh_connect();
     }
-    public function doconnect() {
-        $this->conn = new mysqli($this->host, $this->user, $this->pass);
+        
+    public function bdh_connect() {
+        $this->conn = mysqli_connect($this->host, $this->user, $this->pass);
         if ( $this -> conn -> connect_errno) {
-            $this->error = $this -> conn -> connect_errno;
+            $this-> error = $this -> conn -> connect_errno;
             return false;
         }
-        
         return true;
     }
-    public function prepareQuery($query){
-        $statament = $this->conn->prepare($query);
-        return $statament;
-    }
-    public function mysql_connect() {
+    
+    public function close_connection() {
         $this ->conn ->close();
-        return $this->conn;
     }
-    public function mysql_result() {
-        return $this->result;
+    
+    public function get_error() {
+        return $this->error;
     }
 
-
-};
+}
