@@ -8,7 +8,7 @@ class crud extends conn{
      * @method __construct operation
      * 
      */
-    public function __construct($host, $user, $pass, $db){
+    public function __construct($host="localhost", $user = "pedro", $pass = "pedro", $db= "pelis"){
         parent::__construct($host, $user, $pass, $db);
     }
 
