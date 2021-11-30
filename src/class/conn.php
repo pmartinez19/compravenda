@@ -15,12 +15,15 @@ class conn {
      * @param string $db
      */
 
-    public function __construct($host="localhost", $user = "pedro", $pass = "pedro", $db= "pelis") {
+    public function __construct($host="localhost", $user = "root", $pass = "root", $db= "pelis") {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
         $this->db = $db;
         $this->bdh_connect();
+    }
+    public function get_conn(){
+        return $this->conn;
     }
         
     public function bdh_connect() {

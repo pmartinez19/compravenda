@@ -4,12 +4,14 @@
      * Class to handle CRUD operations 
      */
 class crud extends conn{
+    private $conn;
     /**
      * @method __construct operation
      * 
      */
-    public function __construct($host="localhost", $user = "pedro", $pass = "pedro", $db= "pelis"){
+    public function __construct($host="localhost", $user = "root", $pass = "root", $db= "pelis"){
         parent::__construct($host, $user, $pass, $db);
+        $this->conn = parent::get_conn();
     }
 
     /**
@@ -18,7 +20,6 @@ class crud extends conn{
      * @param array $data
      * @return boolean
      */
-
     public function insertData($table, $data){
         $iterations = count($data);
         $sql = "INSERT INTO $table (";
@@ -50,7 +51,7 @@ class crud extends conn{
             }
         }
         $sql .= " WHERE $where";
-        $statament = $this-> conn->prepare($sql);
+        $statament = $this -> conn->prepare($sql);
         return $statament;
     }
 

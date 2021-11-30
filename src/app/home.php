@@ -3,10 +3,13 @@ require_once '../class/conn.php';
 require_once '../class/crud.php';
 include_once '../include/header.php';
 include_once '../include/nav.php';
-
+if(isset($conn)){
+    $conn -> close();
+};
 $conn = new crud();
-$statment = $conn-> selectAllData("compravende.producto");
-$result = $statment->setFetchMode(PDO::FETCH_ASSOC);
+$statment = $conn-> selectAllData("producto");
+
+$result = $statment->fetch(PDO::FETCH_ASSOC);
 var_dump($result);
 
 ?>
