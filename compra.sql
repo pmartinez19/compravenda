@@ -44,32 +44,10 @@ INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '1
 INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 2);
 INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 3);
 INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 4);
-INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 5);
-INSERT INTO compravende.compra (1,fecha_compra, valor, descripcion) VALUES ('2020-01-01', '10', 'Pizza');
-INSERT INTO compravende.compra (2,fecha_compra, valor, descripcion) VALUES ('2020-01-01', '10', 'Pizza');
-INSERT INTO compravende.compra (3,fecha_compra, valor, descripcion) VALUES ('2020-01-01', '10', 'Pizza');
-INSERT INTO compravende.compra (4,fecha_compra, valor, descripcion) VALUES ('2020-01-01', '10', 'Pizza');
-INSERT INTO compravende.compra (5,fecha_compra, valor, descripcion) VALUES ('2020-01-01', '10', 'Pizza');
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (1, 1, 1, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (1, 1, 2, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (1, 1, 3, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (1, 1, 4, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (1, 1, 5, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (2, 2, 1, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (2, 2, 2, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (2, 2, 3, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (2, 2, 4, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (2, 2, 5, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (3, 3, 1, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (3, 3, 2, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (3, 3, 3, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (3, 3, 4, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (3, 3, 5, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (4, 4, 1, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (4, 4, 2, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (4, 4, 3, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (4, 4, 4, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (4, 4, 5, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (5, 5, 1, 1, 10);
-INSERT INTO compravende.item (cliente_id, compra_id, producto_id, cantidad, valor) VALUES (5, 5, 2, 1, 10);
 
+INSERT INTO `compra` (`id`, `cliente_id`, `fecha_compra`, `valor`, `descripcion`) VALUES (NULL, '1', '2021-11-30', '20.5', 'Esto es uina descripcion de una compra');
+INSERT INTO `compra` (`id`, `cliente_id`, `fecha_compra`, `valor`, `descripcion`) VALUES (NULL, '2', '2021-11-30', '10.5', 'Esto es uina descripcion de una compra');
+INSERT INTO `compra` (`id`, `cliente_id`, `fecha_compra`, `valor`, `descripcion`) VALUES (NULL, '3', '2021-12-01', '28.5', 'Esto es uina descripcion de una compra');
+INSERT INTO `compra` (`id`, `cliente_id`, `fecha_compra`, `valor`, `descripcion`) VALUES (NULL, '4', '2021-11-30', '480.5', 'Esto es uina descripcion de una compra');
+
+INSERT INTO `item` (`id`, `compra_id`, `producto_id`, `cantidad`, `valor`) VALUES (NULL, '1', '1', '5', '20.5');
