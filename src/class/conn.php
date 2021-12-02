@@ -15,7 +15,7 @@ class conn {
      * @param string $db
      */
 
-    public function __construct($host="localhost", $user = "root", $pass = "root", $db= "pelis") {
+    public function __construct($host="mariadb:host=localhost", $user = "pedro", $pass = "pedro", $db= "pelis") {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
@@ -27,16 +27,19 @@ class conn {
     }
         
     public function bdh_connect() {
-        $this->conn = mysqli_connect($this->host, $this->user, $this->pass);
-        if ( $this -> conn -> connect_errno) {
-            $this-> error = $this -> conn -> connect_errno;
-            return false;
+        try {
+            $this->conn = new PDO ($this->host, $this->user, $this->pass);
+            $this -> conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+            $this -> error = $e->getMessage();
         }
-        return true;
+        
     }
     
     public function close_connection() {
-        $this ->conn ->close();
+        $this ->conn ->null;
     }
     
     public function get_error() {
