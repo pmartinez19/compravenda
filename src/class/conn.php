@@ -15,7 +15,7 @@ class conn {
      * @param string $db
      */
 
-    public function __construct($host="localhost", $user = "root", $pass = "root", $db= "pelis") {
+    public function __construct($host="localhost", $user = "pedro", $pass = "pedro", $db= "compravende") {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
@@ -27,9 +27,10 @@ class conn {
     }
         
     public function bdh_connect() {
-        $this->conn = mysqli_connect($this->host, $this->user, $this->pass);
+        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
         if ( $this -> conn -> connect_errno) {
             $this-> error = $this -> conn -> connect_errno;
+            echo "Fallo al conectar a MySQL: (" . $this->error . ") " . $this->conn->connect_error;
             return false;
         }
         return true;

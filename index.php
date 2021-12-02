@@ -4,10 +4,7 @@
 
     <body>
     <?php 
-    include_once './src/include/nav.php';
-    require_once './src/class/conn.php';
-    require_once './src/class/crud.php';
-
-    ?>
+    header('Location: ./src/app/home.php')
+?>
     </body>
 </html>

@@ -36,10 +36,11 @@ CREATE TABLE compravende.producto (
 
 ALTER TABLE `item` ADD CONSTRAINT `compra_id_FK` FOREIGN KEY (`compra_id`) REFERENCES `compra`(`id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `item` ADD CONSTRAINT `producto_id_FK` FOREIGN KEY (`producto_id`) REFERENCES `producto`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-INSERT INTO compravende.cliente (nombre, direccion, telefono, email) VALUES ('Juan Perez', 'Calle 123', '12345678', 'femwiof@f2i3.com');
-INSERT INTO compravende.cliente (nombre, direccion, telefono, email) VALUES ('Pedro Perez', 'Calle 123', '12345678', 'femwiof@f2i3.com');
-INSERT INTO compravende.cliente (nombre, direccion, telefono, email) VALUES ('Maria Perez', 'Calle 123', '12345678', 'fieifi@fwe.es');
-INSERT INTO compravende.cliente (nombre, direccion, telefono, email) VALUES ('Juan Perez', 'Calle 123', '12345678', 'ghiot@oef.es');
+Use compravende;
+INSERT INTO compravende.cliente (nombre, password, direccion, telefono, email) VALUES ('Juan Perez', 1234, 'Calle 123', '12345678', 'femwiof@f2i3.com');
+INSERT INTO compravende.cliente (nombre, password,direccion, telefono, email) VALUES ('Pedro Perez', 1234, 'Calle 123', '12345678', 'femwiof@f2i3.com');
+INSERT INTO compravende.cliente (nombre, password,direccion, telefono, email) VALUES ('Maria Perez', 1234, 'Calle 123', '12345678', 'fieifi@fwe.es');
+INSERT INTO compravende.cliente (nombre, password,direccion, telefono, email) VALUES ('Juan Perez', 1234, 'Calle 123', '12345678', 'ghiot@oef.es');
 INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 1);
 INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 2);
 INSERT INTO compravende.producto (nombre, valor, cliente_id) VALUES ('Pizza', '10', 3);
