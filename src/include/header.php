@@ -7,5 +7,35 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <?php 
+    $actual_link = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+    if(strpos($actual_link, 'index.php') ){
+        echo 'index.php';
+    }
+    else if(strpos($actual_link, 'login.php') ){
+        echo '<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">';
+        echo '<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>';
+        echo '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>';
+
+        echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">';
+        echo '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">';
+        echo '<link rel="stylesheet" type="text/css" href="../login.css">';
+    }
+    else if(strpos($actual_link, 'signup.php') ){
+        echo 'HOLA';
+    }
+    else if(strpos($actual_link, 'profile.php') ){
+        echo '<link rel="stylesheet" href="css/profile.css">';
+    }
+    else if(strpos($actual_link, 'search.php') ){
+        echo '<link rel="stylesheet" href="css/search.css">';
+    }
+    else if(strpos($actual_link, 'add.php') ){
+        echo '<link rel="stylesheet" href="css/add.css">';
+    }
+    else if(strpos($actual_link, 'edit.php') ){
+    }
+    ?>
+
     <title>Compravende</title>
 </head>

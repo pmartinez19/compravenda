@@ -10,7 +10,12 @@
           <a class="nav-link active" aria-current="page" href="/compravende/src/app/home.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <?php if(isset($_SESSION['login_user'])){
+            echo '<a class="nav-link" href="/compravende/src/class/logout.php">Cerrar Sesión</a>';
+            }else{
+              echo '<a class="nav-link" href="/compravende/src/app/login.php">Iniciar Sesión</a>';
+            }            
+            ?>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
