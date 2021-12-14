@@ -6,9 +6,16 @@
       // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($conn,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
+	  $sql_hash = "SELECT * FROM cliente WHERE username = '$myusername'";
+	  $result = mysqli_query($conn,$sql_hash);
+	  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	  echo "hash: ".var_dump($row);
+	  $hash = $row['password'];
+
+	  $verify = password_verify($mypassword, $hash); 
       
-      $sql = "SELECT id FROM cliente WHERE username = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT id FROM cliente WHERE username = '$myusername' ";
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       
@@ -17,7 +24,7 @@
       
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
-      if($count == 1) {
+      if($count == 1 && $verify) {
          $_SESSION['login_user'] = $myusername;
 		 $_SESSION['id_user'] = $row['id'];
          

@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $mypassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $myemail = mysqli_real_escape_string($conn,$_POST['email']);
         $myname = mysqli_real_escape_string($conn,$_POST['fname']);
-        $myphone = mysqli_real_escape_string($conn,$_POST['phone']);
+        $mytelefono = mysqli_real_escape_string($conn,$_POST['telefono']);
         $mydireccion = mysqli_real_escape_string($conn,$_POST['direccion']);
         $myciudad = mysqli_real_escape_string($conn,$_POST['ciudad']);
         $mypais = mysqli_real_escape_string($conn,$_POST['pais']);
@@ -27,16 +27,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $sql = "INSERT into cliente (username, nombre, password, direccion, telefono, email, ciudad, pais, zip) VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?)";  
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssssssss", $myusername, $myusername ,$mypassword, $mydireccion, $myphone, $myemail, $myciudad, $mypais, $myzip);
+        $stmt->bind_param("sssssssss", $myusername, $myusername ,$mypassword, $mydireccion, $mytelefono, $myemail, $myciudad, $mypais, $myzip);
         $stmt->execute();
         $stmt->close();
         $conn->close();
-        //header("location: ../../index.php");
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+        header("location: ../../index.php");
+        
     }
 }
 ?>
@@ -70,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="form-group">
                         <label for="telefono">Telefono</label>
-                        <input class="form-control" placeholder="Número de telefono" name="phone" type="text" id = "telefono" value="" required>
+                        <input class="form-control" placeholder="Número de telefono" name="telefono" type="text" id = "telefono" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="direccion">Dirección</label>

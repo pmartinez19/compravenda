@@ -1,6 +1,6 @@
 function validateForm() {
     if (document.forms["formulario"]["username"].value == "") {
-        alert("Username must be filled out");
+        alert("Username campo obligatorio!");
         return false;
     }
     if ( document.forms["formulario"]["password"].value == "") {
@@ -10,43 +10,42 @@ function validateForm() {
         }
         else{
             if ( document.forms["formulario"]["password"].value != document.forms["formulario"]["cpassword"].value){
-                alert("Las claves no coinciden");
+                alert("Las claves no coinciden!");
                 return false;
             }
         }
-        alert("Password must be filled out");
+        alert("Password campo obligatorio!");
         return false;
     }
     if (document.forms["formulario"]["email"].value == "") {
-        alert("Email must be filled out");
+        alert("Email campo obligatorio!");
         return false;
     }
     if (document.forms["formulario"]["fname"].value == "") {
-        alert("Name must be filled out");
+        alert("Name campo obligatorio!");
         return false;
     }
-    if (document.forms["formulario"]["phone"].value == "" ){
-        let phone = document.forms["formulario"]["phone"].value.paserInt();
-        if (isNaN(document.forms["formulario"]["phone"].value) || document.forms["formulario"]["phone"].value.length != 9)
+    if (document.forms["formulario"]["telefono"].value == "" ){
+        if (isNaN(document.forms["formulario"]["telefono"].value) || document.forms["formulario"]["telefono"].value.length != 9)
             {
-        alert("Número de teléfono inválido" + typeof document.forms["formulario"]["phone"].value)	
+        alert("Número de teléfono inválido");	
         return false;
         }
     }
-    if (document.forms["formulario"]["address"].value == "") {
-        alert("Address must be filled out");
+    if (document.forms["formulario"]["direccion"].value == "") {
+        alert("direccion obligatorio");
         return false;
     }
-    if (document.forms["formulario"]["city"].value == "") {
-        alert("City must be filled out");
+    if (document.forms["formulario"]["ciudad"].value == "") {
+        alert("ciudad obligatio");
         return false;
     }
-    if (document.forms["formulario"]["state"].value == "") {
-        alert("State must be filled out");
+    if (document.forms["formulario"]["pais"].value == "") {
+        alert("pais obligatorio");
         return false;
     }
     if (x = document.forms["formulario"]["zip"].value == "") {
-        alert("Zip must be filled out");
+        alert("Zip obligatorio");
         return false;
     }else{
         document.forms["formulario"].submit();
