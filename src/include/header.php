@@ -8,9 +8,10 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <?php 
-    $actual_link = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+    // Custom CSS
+    $actual_link = $_SERVER['PHP_SELF'];
     if(strpos($actual_link, 'index.php') ){
-        echo 'index.php';
+        //TODO: Add custom CSS
     }
     else if(strpos($actual_link, 'login.php') ){
         echo '<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">';
@@ -22,19 +23,12 @@
         echo '<link rel="stylesheet" type="text/css" href="../login.css">';
     }
     else if(strpos($actual_link, 'signup.php') ){
-        echo 'HOLA';
+        //TODO: Add custom CSS
     }
-    else if(strpos($actual_link, 'profile.php') ){
-        echo '<link rel="stylesheet" href="css/profile.css">';
+    else if(strpos($actual_link, 'user.php') ){
+        //TODO: Add custom CSS
     }
-    else if(strpos($actual_link, 'search.php') ){
-        echo '<link rel="stylesheet" href="css/search.css">';
-    }
-    else if(strpos($actual_link, 'add.php') ){
-        echo '<link rel="stylesheet" href="css/add.css">';
-    }
-    else if(strpos($actual_link, 'edit.php') ){
-    }
+
     ?>
 
     <title>Compravende</title>

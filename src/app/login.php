@@ -19,6 +19,7 @@
 		
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
+		 $_SESSION['id_user'] = $row['id'];
          
          echo "Bienvenido, $myusername!";
          header("location: ../../index.php");
