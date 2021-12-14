@@ -21,7 +21,9 @@
             echo '<li class="nav-item">';
             echo '<a class="nav-link" href="/compravende/src/app/user.php">'.$_SESSION["login_user"].'</a>';
             echo '</li>';
-
+            echo '<li class="nav-item">';
+            echo '<a class="nav-link" href="/compravende/src/app/add.product.php"> Nuevo producto</a>';
+            echo '</li>';
             }else{
               echo '<a class="nav-link" href="#">Invitado</a>';
             }            

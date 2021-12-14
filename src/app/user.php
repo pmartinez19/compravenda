@@ -25,7 +25,6 @@ echo "<h1> Bienvenido ".$_SESSION['login_user']."</h1>";
 
 <?php
 
-echo var_dump($_GET);
 echo "<br>";
 
 if(isset($_GET['order_property'])){
@@ -54,7 +53,6 @@ if(isset($_GET['order_type'])){
 $sql = "SELECT * FROM producto where cliente_id = '".$_SESSION['id_user']."'";
 $sql .= " ORDER BY ".$order_property." ".$order_type;
 
-echo var_dump($sql);
 $result = $conn->query($sql);
   
     if ($result->num_rows > 0) {

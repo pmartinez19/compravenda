@@ -41,7 +41,6 @@ echo "<h1> Bienvenidos a Compravende</h1>";
     
 <?php
 
-echo var_dump($_GET);
 echo "<br>";
 
 if(isset($_GET['order_property'])){
@@ -150,9 +149,9 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
             echo '   <td>'.$row['valor'].'</td>';
             echo '   <td>'.$row['descripcion'].'</td>';
             echo '   <td>'.$row['data'].'</td>';
-            echo '   <td><img src= "'.$row['foto_1'].'"></td>';
-            echo '   <td><img src= "'.$row['foto_2'].'"></td>';
-            echo '   <td><img src= "'.$row['foto_3'].'"></td>';
+            echo '   <td><img src= "../fotos/'.$row['foto_1'].'"></td>';
+            echo '   <td><img src= "../fotos/'.$row['foto_2'].'"></td>';
+            echo '   <td><img src= "../fotos/'.$row['foto_3'].'"></td>';
             echo '   <td>'.$row['visitas'].'</td>';
             echo  '    <td scope="col"><a href="producto.php?id='.$row['id'].'">Producto </td>';
             echo '</tr>';
