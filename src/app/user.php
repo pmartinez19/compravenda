@@ -81,9 +81,9 @@ $result = $conn->query($sql);
             echo '   <td>'.$row['valor'].'</td>';
             echo '   <td>'.$row['descripcion'].'</td>';
             echo '   <td>'.$row['data'].'</td>';
-            echo '   <td><img src= "'.$row['foto_1'].'"></td>';
-            echo '   <td><img src= "'.$row['foto_2'].'"></td>';
-            echo '   <td><img src= "'.$row['foto_3'].'"></td>';
+            echo '   <td><img src= "../fotos/'.$row['foto_1'].'"></td>';
+            echo '   <td><img src= "../fotos/'.$row['foto_2'].'"></td>';
+            echo '   <td><img src= "../fotos/'.$row['foto_3'].'"></td>';
             echo '   <td>'.$row['visitas'].'</td>';
             echo '</tr>';
         } 

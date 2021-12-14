@@ -21,13 +21,13 @@
     <table>
         <tr>
             <td>
-                <img src="<?php echo $row['foto_1']; ?>" alt="<?php echo $row['nombre']; ?>" width="200" height="200">
+                <img src="../fotos/<?php echo $row['foto_1']; ?>" alt="<?php echo $row['nombre']; ?>" width="200" height="200">
             </td>
             <td>
-                <img src="<?php echo $row['foto_2']; ?>" alt="<?php echo $row['nombre']; ?>" width="200" height="200">
+                <img src="../fotos/<?php echo $row['foto_2']; ?>" alt="<?php echo $row['nombre']; ?>" width="200" height="200">
             </td>
             <td>
-                <img src="<?php echo $row['foto_3']; ?>" alt="<?php echo $row['nombre']; ?>" width="200" height="200">
+                <img src="../fotos/<?php echo $row['foto_3']; ?>" alt="<?php echo $row['nombre']; ?>" width="200" height="200">
             <td>
                 <h1><?php echo $row['nombre']; ?></h1>
                 <p><?php echo $row['descripcion']; ?></p>
