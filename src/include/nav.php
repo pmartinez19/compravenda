@@ -19,7 +19,7 @@
         </li>
         <?php if(isset($_SESSION['login_user'])){
             echo '<li class="nav-item">';
-            echo '<a class="nav-link" href="/compravende/src/app/user.php">'.$_SESSION["username"].'</a>';
+            echo '<a class="nav-link" href="/compravende/src/app/user.php">'.$_SESSION["login_user"].'</a>';
             echo '</li>';
 
             }else{
